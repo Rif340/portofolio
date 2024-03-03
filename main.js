@@ -3,8 +3,8 @@ let menuIcon = document.querySelector('#menu-icon'); // Ganti 'memuIcon' menjadi
 let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('fa-xmark'); // Mengganti 'fs-xmsrk' menjadi 'fa-xmark'
-    navbar.classList.toggle('active');
+  menuIcon.classList.toggle('fa-xmark'); // Mengganti 'fs-xmsrk' menjadi 'fa-xmark'
+  navbar.classList.toggle('active');
 };
 
 // scroll section active link
@@ -12,19 +12,19 @@ let sections = document.querySelectorAll('section'); // Mengganti 'section' menj
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        }
-    });
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(links => {
+        links.classList.remove('active');
+        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+      });
+    }
+  });
 };
 
 // sticky navbar
@@ -37,74 +37,52 @@ navbar.classList.remove('active');
 
 // scroll reveal
 ScrollReveal({
-    distance: '80px',
-    duration: 2000,
-    delay: 200,
+  distance: '80px',
+  duration: 2000,
+  delay: 200,
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .service-container, .portfolio-box, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home h1, .about-img', { origin: 'left' }); // Mengganti 'home-contact' menjadi 'home'
 ScrollReveal().reveal('.home p, .about-content', { origin: 'right' }); // Mengganti 'home-contact' menjadi 'home'
-// dispable inspecting
-document.onkeydown = function (e) {
-  if (event.keyCode == 123) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)) {
-    return false;
-  }
-  if (e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) {
-    return false;
-  }
-}
-//Script for disabling right click on mouse
-var message = "Function Disabled!";
-function clickdsb() {
-  if (event.button == 2) {
-    alert(message);
-    return false;
-  }
-}
-function clickbsb(e) {
-  if (document.layers || document.getElementById && !document.all) {
-    if (e.which == 2 || e.which == 3) {
-      alert(message);
-      return false;
-    }
-  }
-}
-if (document.layers) {
-  document.captureEvents(Event.MOUSEDOWN);
-  document.onmousedown = clickbsb;
-}
-else if (document.all && !document.getElementById) {
-  document.onmousedown = clickdsb;
+
+$(document).bind('contextmenu',function(e) {
+  alert('copyright Yourportfolio for your curiculum vitae , resume & your portfolio');//silahkan tulis pesan yang akan ditampilkan
+ });
+
+
+// Disable right-click
+function disableContextMenu() {
+  alert("Context Menu Disabled!");
+  return false; // Mencegah menu konteks muncul
 }
 
-document.oncontextmenu = new Function("alert(message);return false");
-// disable inspecting
+function disableShortcutKeys(e) {
+  // Mencegah Ctrl+Shift+I dan Ctrl+U
+  if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) || (e.ctrlKey && e.keyCode === 85)) {
+      alert("Function Disabled!");
+      e.preventDefault();
+      return false;
+  }
+}
+
+document.addEventListener('contextmenu', event=> event.preventDefault()); 
+      document.onkeydown = function(e) { 
+      if(event.keyCode == 123) { 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+      return false; 
+      } 
+      } 
+
 // Typing text for the first element
 const dynamicText1 = document.querySelector("#typing1");
 const words1 = ["Fresh Graduate", "Web Developer", "خريج حديث", "مطوّر ويب", "新卒者", "ウェブ開発者", "Lulusan Baru", "Pengembang Web"];
@@ -134,7 +112,7 @@ const typeEffect1 = () => {
 
 // Typing text for the second element
 const dynamicText2 = document.querySelector("#typing2");
-const words2 = ["Touch !", "! 私に連絡して", "اتصل بي !","Hubungi saya !"];
+const words2 = ["Touch !", "! 私に連絡して", "اتصل بي !", "Hubungi saya !"];
 let wordIndex2 = 0;
 let charIndex2 = 0;
 let isDeleting2 = false;
