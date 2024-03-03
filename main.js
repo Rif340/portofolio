@@ -47,55 +47,6 @@ ScrollReveal().reveal('.home-img, .service-container, .portfolio-box, .contact f
 ScrollReveal().reveal('.home h1, .about-img', { origin: 'left' }); // Mengganti 'home-contact' menjadi 'home'
 ScrollReveal().reveal('.home p, .about-content', { origin: 'right' }); // Mengganti 'home-contact' menjadi 'home'
 
- //Script for disabling right click on mouse
- var message = "Tidak Bisa Menginspect Web ini..!";
-
- function showAlert() {
-   // Membuat elemen div untuk pesan alert
-   var alertDiv = document.createElement("div");
-   alertDiv.className = "custom-alert";
-   alertDiv.innerHTML = message;
-
-   // Menambahkan elemen ke dalam body
-   document.body.appendChild(alertDiv);
-
-   // Menampilkan pesan alert dengan animasi
-   setTimeout(function () {
-     alertDiv.style.display = "block";
-   }, 100);
-
-   // Menghilangkan pesan alert setelah beberapa detik
-   setTimeout(function () {
-     alertDiv.style.display = "none";
-   }, 3000);
- }
-
- function clickdsb() {
-   if (event.button == 2) {
-     showAlert();
-     return false;
-   }
- }
-
- function clickbsb(e) {
-   if (document.layers || document.getElementById && !document.all) {
-     if (e.which == 2 || e.which == 3) {
-       showAlert();
-       return false;
-     }
-   }
- }
-
- if (document.layers) {
-   document.captureEvents(Event.MOUSEDOWN);
-   document.onmousedown = clickbsb;
- } else if (document.all && !document.getElementById) {
-   document.onmousedown = clickdsb;
- }
-
- document.oncontextmenu = new Function("showAlert(); return false;");
-//  disable alert
-
 // Typing text for the first element
 const dynamicText1 = document.querySelector("#typing1");
 const words1 = ["Fresh Graduate", "Web Developer", "خريج حديث", "مطوّر ويب", "新卒者", "ウェブ開発者", "Lulusan Baru", "Pengembang Web"];
