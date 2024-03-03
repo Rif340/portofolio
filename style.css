@@ -119,7 +119,6 @@ span {
 }
 
 .home-img img {
-    margin-left: 3rem;
     width: 25vw;
     animation: floatImage 4s ease-in-out infinite;
 }
