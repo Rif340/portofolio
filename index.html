@@ -56,7 +56,20 @@
           <a href="https://tiktok.com/@Wildrrifu"><i class="fa-brands fa-tiktok"></i></a>
           <a href="https://github.com/Rif340"><i class="fa-brands fa-github"></i></a>
         </div>
-        <a href="CV_MuhammadArifWicaksono.pdf" class="btn" download>Download Cv</a>
+        <a href="CV_MuhammadArifWicaksono.pdf" class="btn" onclick="showAlert()">Download CV</a>
+
+    <script>
+        function showAlert() {
+            // Munculkan alert dengan opsi
+            var confirmation = confirm('Apakah Anda yakin ingin mengunduh CV?');
+
+            
+            if (confirmation) {
+        
+                window.location.href = 'CV_MuhammadArifWicaksono.pdf';
+            }
+        }
+    </script>
       </div>
 
       <div class="home-img">
