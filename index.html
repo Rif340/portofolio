@@ -60,13 +60,12 @@
 
     <script>
         function showAlert() {
-            // Munculkan alert dengan opsi
             var confirmation = confirm('Apakah Anda yakin ingin mengunduh CV?');
-
-            
             if (confirmation) {
-        
                 window.location.href = 'CV_MuhammadArifWicaksono.pdf';
+            } else {
+                // Kembali ke halaman sebelumnya
+                window.history.back();
             }
         }
     </script>
