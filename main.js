@@ -53,35 +53,11 @@ $(document).bind('contextmenu',function(e) {
 
 
 // Disable right-click
-function disableContextMenu() {
-  alert("Context Menu Disabled!");
-  return false; // Mencegah menu konteks muncul
-}
+document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-function disableShortcutKeys(e) {
-  // Mencegah Ctrl+Shift+I dan Ctrl+U
-  if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) || (e.ctrlKey && e.keyCode === 85)) {
-      alert("Function Disabled!");
-      e.preventDefault();
-      return false;
-  }
+function ctrlShiftKey(e, keyCode) {
+  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
 }
-
-document.addEventListener('contextmenu', event=> event.preventDefault()); 
-      document.onkeydown = function(e) { 
-      if(event.keyCode == 123) { 
-      return false; 
-      } 
-      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
-      return false; 
-      } 
-      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
-      return false; 
-      } 
-      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
-      return false; 
-      } 
-      } 
 
 // Typing text for the first element
 const dynamicText1 = document.querySelector("#typing1");
