@@ -52,13 +52,6 @@ $(document).bind('contextmenu',function(e) {
  });
 
 
-// Disable right-click
-document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-function ctrlShiftKey(e, keyCode) {
-  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-}
-
 // Typing text for the first element
 const dynamicText1 = document.querySelector("#typing1");
 const words1 = ["Fresh Graduate", "Web Developer", "خريج حديث", "مطوّر ويب", "新卒者", "ウェブ開発者", "Lulusan Baru", "Pengembang Web"];
