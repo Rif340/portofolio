@@ -47,11 +47,6 @@ ScrollReveal().reveal('.home-img, .service-container, .portfolio-box, .contact f
 ScrollReveal().reveal('.home h1, .about-img', { origin: 'left' }); // Mengganti 'home-contact' menjadi 'home'
 ScrollReveal().reveal('.home p, .about-content', { origin: 'right' }); // Mengganti 'home-contact' menjadi 'home'
 
-$(document).bind('contextmenu',function(e) {
-  alert('copyright Yourportfolio for your curiculum vitae , resume & your portfolio');//silahkan tulis pesan yang akan ditampilkan
- });
-
-
 // Typing text for the first element
 const dynamicText1 = document.querySelector("#typing1");
 const words1 = ["Fresh Graduate", "Web Developer", "خريج حديث", "مطوّر ويب", "新卒者", "ウェブ開発者", "Lulusan Baru", "Pengembang Web"];
