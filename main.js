@@ -104,3 +104,4 @@ const typeEffect2 = () => {
 // Trigger both typing effects
 typeEffect1();
 typeEffect2();
+
