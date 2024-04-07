@@ -110,6 +110,7 @@ section {
     position: relative;
 }
 
+
 .resume .resume-item h4 {
     line-height: 18px;
     font-size: 18px;
@@ -145,7 +146,8 @@ section {
 .home {
     display: flex;
     justify-content: center;
-    align-items: ce;
+    align-items: center;
+    
 }
 
 .home-content h3 {
@@ -235,7 +237,7 @@ span {
     align-items: center;
     gap: 2rem;
     background: var(--snd-bg-color);
-    clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
+     clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
 }
 
 .about-img img {
@@ -428,8 +430,8 @@ span {
 
 /* contact */
 .contact {
-    background: var(--snd-bg-color);
     clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    background: var(--snd-bg-color);
 }
 
 .contact h2 {
