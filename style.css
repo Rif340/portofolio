@@ -45,7 +45,7 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    polygon(0 0,100% 0,100% 80%,0 100%)
+    clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
 }
 
 .logo {
@@ -236,6 +236,7 @@ span {
     align-items: center;
     gap: 2rem;
     background: var(--snd-bg-color);
+    clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
 }
 
 .about-img img {
@@ -429,6 +430,7 @@ span {
 /* contact */
 .contact {
     background: var(--snd-bg-color);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
 }
 
 .contact h2 {
@@ -489,6 +491,7 @@ span {
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--bg-color);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
 }
 
 .footer-text {
