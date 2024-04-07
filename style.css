@@ -237,7 +237,7 @@ span {
     align-items: center;
     gap: 2rem;
     background: var(--snd-bg-color);
-     clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 15vh, 100% 100%, 0 100%);
 }
 
 .about-img img {
@@ -430,7 +430,7 @@ span {
 
 /* contact */
 .contact {
-    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
     background: var(--snd-bg-color);
 }
 
@@ -492,7 +492,7 @@ span {
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--bg-color);
-    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    
 }
 
 .footer-text {
